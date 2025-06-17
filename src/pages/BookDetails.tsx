@@ -8,12 +8,17 @@ import { StarIcon as StarOutlineIcon } from '@heroicons/react/24/outline';
 import BookMetaGrid from '@/components/features/book/BookMetaGrid.tsx';
 import BookLinksPanel from '@/components/features/book/BookLinksPanel.tsx';
 import BookCategories from '@/components/features/book/BookCategories.tsx';
+import { useEffect } from 'react';
 
 function BookDetails() {
   const { bookId } = useParams({ strict: false });
   const { data: bookRaw, isLoading, error } = useSearchBookByID(bookId ?? '');
   const bookDetails = transformBook(bookRaw);
   const info = bookDetails?.volumeInfo;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [bookId]);
 
   // Stars
   const renderStars = (rating: number) => {

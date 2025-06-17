@@ -5,6 +5,7 @@ import {
 } from '@/hooks/usePopularBookList.ts';
 import { formatNYTBooksToCarousel } from '@/lib/formatters.ts';
 import ImgCarousel from '@/components/features/popular/ImgCarousel.tsx';
+import { useEffect } from 'react';
 
 function PopularIndex() {
   const {
@@ -17,6 +18,10 @@ function PopularIndex() {
     isLoading: isNonFictionLoading,
     error: nonfictionErr,
   } = useNonFictionBestSellers();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <main
