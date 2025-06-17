@@ -51,7 +51,7 @@ function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Source Code</h3>
             <a
-              href="https://github.com/your-username/newton"
+              href="https://github.com/Tamagomago/newton-library.git"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-blue-200/70 transition-colors duration-300 hover:text-white"
