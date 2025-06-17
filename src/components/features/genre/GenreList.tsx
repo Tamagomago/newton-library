@@ -4,11 +4,7 @@ import { useEffect } from 'react';
 import { genres } from '@/data/bisacGenre.ts';
 import { useGenreStore } from '@/stores/useGenreStore.ts';
 
-interface GenreListProps {
-  variant: 'home' | 'collections';
-}
-
-function GenreList({ variant }: GenreListProps) {
+function GenreList() {
   const { randomGenres, setRandomGenres, isGenreSelected, toggleGenre } =
     useGenreStore();
 
@@ -21,7 +17,7 @@ function GenreList({ variant }: GenreListProps) {
 
   return (
     <section
-      className={`${variant === 'collections' ? 'hidden md:grid' : 'grid'} w-[40%] grid-cols-2 gap-2 md:visible md:h-[48px] md:grid-cols-5 md:gap-4`}
+      className={`hidden w-[40%] grid-cols-3 gap-2 sm:grid md:h-[48px] md:grid-cols-5 md:gap-4`}
     >
       {randomGenres.map((genre: Genre) => (
         <GenreButton
