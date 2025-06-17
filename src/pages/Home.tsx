@@ -28,7 +28,7 @@ function Home() {
           <div className="flex w-[45%] flex-col items-center gap-5">
             <SearchBar variant={'home'} selectedGenres={selectedGenres} />
           </div>
-          <GenreList variant={'home'} />
+          <GenreList />
         </section>
       </div>
     </main>
