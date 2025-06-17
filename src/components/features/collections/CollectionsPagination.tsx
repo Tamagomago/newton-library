@@ -11,12 +11,12 @@ import { Button } from '@/components/ui/button.tsx';
 
 interface CollectionsPaginationProps {
   startIndex?: number;
-  maxResults: number;
+  totalResults: number;
 }
 
 function CollectionsPagination({
   startIndex = 0,
-  maxResults = 0,
+  totalResults = 0,
 }: CollectionsPaginationProps) {
   const navigate = useNavigate();
   const pageSize = 20;
@@ -28,7 +28,7 @@ function CollectionsPagination({
     setCurrentPage(Math.floor(startIndex / pageSize) + 1);
   }, [startIndex]);
 
-  const hasNextPage = startIndex + pageSize < maxResults;
+  const hasNextPage = startIndex + pageSize < totalResults;
   const hasPrevPage = currentPage > 1;
 
   const goToPage = async (newStartIndex: number, e: FormEvent) => {
@@ -40,7 +40,6 @@ function CollectionsPagination({
         startIndex: newStartIndex,
       }),
     });
-    console.log('Index val', newStartIndex);
   };
 
   return (

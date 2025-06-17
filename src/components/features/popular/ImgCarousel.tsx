@@ -1,5 +1,5 @@
 import { useNavigate } from '@tanstack/react-router';
-import { fetchBooksBySearch } from '@/lib/googleBooks';
+import { fetchBooksBySearch } from '@/api/googleBooks.ts';
 
 interface Book {
   book_image?: string;
@@ -17,19 +17,14 @@ function ImageCarousel({ books }: ImageCarouselProps) {
 
   const handleBookClick = async (book: Book) => {
     if (!book.isbn13) return;
-    try {
-      const searchResults = await fetchBooksBySearch(`isbn:${book.isbn13}`);
-      console.log(book.isbn13);
-      if (searchResults?.items?.[0]?.id) {
-        await navigate({
-          to: '/popular/books/$bookId',
-          params: {
-            bookId: searchResults.items[0].id,
-          },
-        });
-      }
-    } catch (error) {
-      console.error('Error searching for book:', error);
+    const searchResults = await fetchBooksBySearch(`isbn:${book.isbn13}`);
+    if (searchResults?.items?.[0]?.id) {
+      await navigate({
+        to: '/popular/books/$bookId',
+        params: {
+          bookId: searchResults.items[0].id,
+        },
+      });
     }
   };
 

@@ -1,4 +1,5 @@
 import { useSearch } from '@tanstack/react-router';
+import { useEffect } from 'react';
 import bg from '@/assets/background/index-bg.jpg';
 import SearchBar from '@/components/features/SearchBar.tsx';
 import GenreList from '@/components/features/genre/GenreList.tsx';
@@ -17,6 +18,9 @@ function CollectionsIndex() {
     genres: Array.isArray(genres) ? genres.join(' ') : (genres ?? undefined),
     startIndex,
   };
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [query, genres, startIndex]);
   const { data: booksRaw, isLoading, error } = useSearchBooks(searchParams);
   const bookList = transformBookList(booksRaw);
   const totalBooks = getTotalItems(booksRaw);
@@ -53,7 +57,7 @@ function CollectionsIndex() {
         </div>
         <CollectionsPagination
           startIndex={startIndex}
-          maxResults={totalBooks}
+          totalResults={totalBooks}
         />
       </div>
     </main>

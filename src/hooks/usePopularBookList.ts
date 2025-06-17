@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchFictionList, fetchNonFictionsList } from '@/lib/nyt.ts';
+import { fetchFictionList, fetchNonFictionsList } from '@/api/nyt.ts';
 
 export function useFictionBestSellers() {
   const { data, isLoading, error } = useQuery({

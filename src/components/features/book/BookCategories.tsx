@@ -13,9 +13,9 @@ function BookCategories({ categories }: BookCategoriesProps) {
             <span className="font-medium text-gray-300">Categories:</span>
           </div>
           <div className="flex flex-wrap gap-2">
-            {categories.map((category, index) => (
+            {categories.map((category) => (
               <span
-                key={index}
+                key={category}
                 className="rounded-full border border-blue-400/30 bg-blue-600/50 px-3 py-1 text-xs text-blue-100"
               >
                 {category}

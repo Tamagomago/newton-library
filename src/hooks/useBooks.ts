@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchBookByID, fetchBooksBySearch } from '@/lib/googleBooks.ts';
+import { fetchBookByID, fetchBooksBySearch } from '@/api/googleBooks.ts';
 import type { SearchParams } from '@/types/types.ts';
 
 export function useSearchBooks({

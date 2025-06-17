@@ -18,7 +18,6 @@ function PopularIndex() {
     error: nonfictionErr,
   } = useNonFictionBestSellers();
 
-  console.log(formatNYTBooksToCarousel(nonFictionList));
   return (
     <main
       className="relative min-h-screen w-screen bg-cover bg-center bg-no-repeat"
