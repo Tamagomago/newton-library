@@ -39,7 +39,7 @@ function CollectionsIndex() {
           </h1>
           <SearchBar selectedGenres={selectedGenres} />
         </div>
-        <GenreList variant={'collections'} />
+        <GenreList />
         <div
           className={`${isLoading ? 'skeleton-loading h-200' : 'h-auto'} bg-blue-dark/10 w-[90%] overflow-hidden rounded-sm p-5 backdrop-blur-3xl transition-all duration-500 md:w-[65%]`}
         >
