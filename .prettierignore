@@ -1,0 +1,17 @@
+# Build output
+build
+
+# Dependencies
+node_modules
+
+# Environment files
+.env
+.env.*
+
+# Lock files (optional)
+package-lock.json
+pnpm-lock.yaml
+
+# Prettier config files
+.prettierrc
+.prettierignore
