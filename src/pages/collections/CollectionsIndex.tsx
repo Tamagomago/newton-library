@@ -28,7 +28,7 @@ function CollectionsIndex() {
   return (
     <main
       className={
-        'relative min-h-full w-full bg-cover bg-center bg-no-repeat'
+        'relative min-h-screen w-screen bg-cover bg-center bg-no-repeat'
       }
       style={{ backgroundImage: `url(${bg})`, backgroundAttachment: 'fixed' }}
     >

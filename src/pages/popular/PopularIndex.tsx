@@ -25,7 +25,7 @@ function PopularIndex() {
 
   return (
     <main
-      className="relative min-h-full w-full bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen w-screen bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${bg})`, backgroundAttachment: 'fixed' }}
     >
       <div className="min-h-screen bg-gray-950/90 py-10 text-white">
